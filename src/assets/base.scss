@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+// primary
+$Soft-blue: hsl(215, 51%, 70%);
+$Cyan: hsl(178, 100%, 50%);
+$Cyan-icon: hsl(178, 100%, 50%, 0.5);
+// neutral
+$Very-dark-blue : hsl(217, 54%, 11%); //(main BG)
+$Very-dark-blue-card : hsl(216, 50%, 16%);//(card BG)
+$Very-dar-blue-line : hsl(215, 32%, 27%); // (line)
+$White: hsl(0, 0%, 100%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $Very-dark-blue;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+}
+
+.main__card {
+    margin-inline: 20px;
+    background-color: $Very-dark-blue-card;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 330px;
+
+    a {
+        text-decoration: none;
+        color: $White;
+    }
+
+    .image-box {
+        position: relative;
+        aspect-ratio: 1;
+        cursor: pointer;
+
+        .img-nft {
+            position: absolute;
+            border-radius: 10px;
+            width: 100%;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            
+        }
+    
+        .icon {
+            width: 100%;
+            position: absolute;
+            background-color: $Cyan-icon;
+            aspect-ratio: 1;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover {
+            .img-nft {
+                opacity: .3;
+            }
+            .icon {
+                opacity: 1;
+            }
+        }
+    }
+
+    
+
+    .card__info {
+        margin-block: 20px;
+        color: $White;
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: $Soft-blue;
+            font-weight: 300;
+        }
+
+        .card__info-price {
+            display: flex;
+            align-items: center;
+            margin-block: 20px;
+            justify-content: space-between;
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                color: $White;
+            }
+
+            p {
+                font-weight: bold;
+            }
+        }
+
+        hr {
+            color: $Cyan;
+            margin-bottom: 20px;
+        }
+
+        .card__creator {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+
+            .avatar {
+                width: 30px;
+                height: 30px;
+                border: 1px solid $Cyan;
+                border-radius: 50%;
+            }
+            strong {
+                color: $White;
+            }
+        }
+    }
+}
